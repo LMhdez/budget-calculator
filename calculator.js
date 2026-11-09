@@ -565,7 +565,7 @@ function enviaremail() {
         "Works offline: " + online,
         "Operative System (ignore if website project): " + os,
         "Final Budget: " + orcamento
-    ].join("\\r\\n");
+    ].join("\r\n");
 
     // Endereço de e-mail para o qual o e-mail será enviado
     var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
@@ -592,7 +592,7 @@ function enviaremailqualquer() {
     var message= document.getElementById('message').value;
 
    
-    var corpoEmail = ["Name: " + nome, "Message: " + message].join("\\r\\n");
+    var corpoEmail = ["Name: " + nome, "Message: " + message].join("\r\n");
 
 
     var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
