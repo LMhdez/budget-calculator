@@ -1,10 +1,9 @@
 # Budget Calculator
 
-An independent project extracted from the original portfolio.
+A multi-step estimator for the cost of website and mobile application projects.
 
-## Usage
+## Run locally
 
-Open `index.html` in a browser.
+Open `index.html` in a modern browser. Tailwind CSS is loaded from its CDN; no build step is required.
 
-The interface uses Tailwind CSS through its CDN.
-The email request feature opens the visitor's configured email application.
+The estimate is indicative and is not a commercial quotation.
