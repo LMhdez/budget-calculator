@@ -251,7 +251,6 @@ function form7() {
     forms = document.querySelector('input[name="tipo7"]:checked');
     forms = forms.value;
 
-    console.log(forms);
 
     if (forms == 0) {
         document.getElementById("formulario8").style.display = "block";
@@ -289,7 +288,6 @@ function form8() {
     back = document.querySelector('input[name="tipo8"]:checked');
     back = back.value;
 
-    console.log(back);
 
     if (back == 0 && p == 0) {
         document.getElementById("formulariof").style.display = "block";
@@ -553,10 +551,21 @@ function enviaremail() {
     var email = document.getElementById('email').value;
 
     //corpo do e-mail com as informações do formulário
-    var corpoEmail = "Name: " + nome + "%0D%0AEmail: " + email + "%0D%0APlatform: " + p + "%0D%0ADesign: " + design
-    + "%0D%0AType of autentication: " + autent + "%0D%0AMedia Features: " + media + "%0D%0AUtility Features: " + utility 
-    + "%0D%0AMulti-languages support: " + lang + "%0D%0AForms Quantity: " + forms + "%0D%0ABack office: " + back 
-    + "%0D%0AWorks offline: " + online + "%0D%0AOperative Sistem (ignore if website project)" + os + "%0D%0AFinal Budget: " + orcamento;
+    var corpoEmail = [
+        "Name: " + nome,
+        "Email: " + email,
+        "Platform: " + p,
+        "Design: " + design,
+        "Type of authentication: " + autent,
+        "Media Features: " + media,
+        "Utility Features: " + utility,
+        "Multi-languages support: " + lang,
+        "Forms Quantity: " + forms,
+        "Back office: " + back,
+        "Works offline: " + online,
+        "Operative System (ignore if website project): " + os,
+        "Final Budget: " + orcamento
+    ].join("\\r\\n");
 
     // Endereço de e-mail para o qual o e-mail será enviado
     var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
@@ -565,7 +574,7 @@ function enviaremail() {
     var assunto = "[Website | Mobile App] Pedido de Orçamento";  
 
     // link de e-mail com os parâmetros apropriados
-    var linkEmail = "mailto:" + destinatario + "?subject=" + assunto + "&body=" + corpoEmail;
+    var linkEmail = "mailto:" + destinatario + "?subject=" + encodeURIComponent(assunto) + "&body=" + encodeURIComponent(corpoEmail);
 
     // Redirecione para o link de e-mail
     window.location.href = linkEmail;
@@ -583,7 +592,7 @@ function enviaremailqualquer() {
     var message= document.getElementById('message').value;
 
    
-    var corpoEmail = "Name: " + nome + "%0D%0AMessage: " + message;
+    var corpoEmail = ["Name: " + nome, "Message: " + message].join("\\r\\n");
 
 
     var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
@@ -591,7 +600,7 @@ function enviaremailqualquer() {
   
 
 
-    var linkEmail = "mailto:" + destinatario + "?subject=" + subject + "&body=" + corpoEmail;
+    var linkEmail = "mailto:" + destinatario + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(corpoEmail);
 
    
     window.location.href = linkEmail;
@@ -599,3 +608,4 @@ function enviaremailqualquer() {
     var formulariof = document.getElementById("formulariof");
     formulariof.style.display = "none";
 }
+
