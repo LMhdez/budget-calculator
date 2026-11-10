@@ -568,13 +568,11 @@ function enviaremail() {
     ].join("\r\n");
 
     // Endereço de e-mail para o qual o e-mail será enviado
-    var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
-
     // Assunto do e-mail
     var assunto = "[Website | Mobile App] Pedido de Orçamento";  
 
     // link de e-mail com os parâmetros apropriados
-    var linkEmail = "mailto:" + destinatario + "?subject=" + encodeURIComponent(assunto) + "&body=" + encodeURIComponent(corpoEmail);
+    var linkEmail = "mailto:?subject=" + encodeURIComponent(assunto) + "&body=" + encodeURIComponent(corpoEmail);
 
     // Redirecione para o link de e-mail
     window.location.href = linkEmail;
@@ -595,12 +593,7 @@ function enviaremailqualquer() {
     var corpoEmail = ["Name: " + nome, "Message: " + message].join("\r\n");
 
 
-    var destinatario = "a2023135575@alunos.estgoh.ipc.pt";
-
-  
-
-
-    var linkEmail = "mailto:" + destinatario + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(corpoEmail);
+    var linkEmail = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(corpoEmail);
 
    
     window.location.href = linkEmail;
